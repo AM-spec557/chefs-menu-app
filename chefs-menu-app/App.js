@@ -46,6 +46,9 @@ function HomeScreen({ navigation }) {
         )}
       />
 
+      // ✅ Save recipes locally for offline mode
+localStorage.setItem("offlineRecipes", JSON.stringify(recipes));
+
       <View style={styles.navButtons}>
         <Button title="Manage Menu ➕" onPress={() => navigation.navigate('Manage Menu')} />
         <Button title="Filter Menu 🔍" onPress={() => navigation.navigate('Filter')} />
