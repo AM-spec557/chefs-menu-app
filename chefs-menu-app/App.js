@@ -66,6 +66,10 @@ function displayRecipes()
     })
   });
 
+  menuBtn.addEventListener "click", () = 
+  // Toggle menu visibility
+  navMenu.classList.toggle("hidden");
+
       <View style={styles.navButtons}>
         <Button title="Manage Menu ➕" onPress={() => navigation.navigate('Manage Menu')} />
         <Button title="Filter Menu 🔍" onPress={() => navigation.navigate('Filter')} />
