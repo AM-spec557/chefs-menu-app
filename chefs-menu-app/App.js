@@ -53,6 +53,18 @@ localStorage.setItem("offlineRecipes", JSON.stringify(recipes));
 function displayRecipes() 
   recipeContainer.innerHTML = ""; 
 
+   // Add rating listeners
+  document.querySelectorAll('.stars').forEach(starContainer = {
+    starContainer.addEventListener('click', event => {
+      if (event.target.classList.contains('star')) {
+        const recipeId = starContainer.getAttribute('data-id');
+        const rating = event.target.getAttribute('data-value');
+        ratings[recipeId] = parseInt(rating);
+        localStorage.setItem("recipeRatings", JSON.stringify(ratings));
+        displayRecipes(); // refresh UI
+      }
+    })
+  });
 
       <View style={styles.navButtons}>
         <Button title="Manage Menu ➕" onPress={() => navigation.navigate('Manage Menu')} />
