@@ -70,6 +70,14 @@ function displayRecipes()
   // Toggle menu visibility
   navMenu.classList.toggle("hidden");
 
+  // Optional: Change button text or icon when open/closed
+  if (navMenu.classList.contains("hidden")) {
+    menuBtn.textContent = "☰ Menu"
+  } else {
+    menuBtn.textContent = "✖ Close"
+  }
+);
+
       <View style={styles.navButtons}>
         <Button title="Manage Menu ➕" onPress={() => navigation.navigate('Manage Menu')} />
         <Button title="Filter Menu 🔍" onPress={() => navigation.navigate('Filter')} />
